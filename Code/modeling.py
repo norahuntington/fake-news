@@ -103,7 +103,7 @@ def score_final_model(model, tfidf, X_train, y_train, X_test, y_test):
     '''
         Transforms X_train into a Tfidf matrix. Transforms X_test into matrix using fitted Tfidf class.
         Uses X_train_tfidf matrix and y_train to fit model.
-        Scores model using area under ROC curve.
+        Scores final model using area under ROC curve.
 
         INPUT:
             - Model class
