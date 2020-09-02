@@ -1,6 +1,6 @@
 # Fake News, Real Lies
 
-The question I wanted to answer with this project is: can we identify a lie given the words a politican uses? To try to answer this, I used IEEE's Fake News dataset to build and compare different models trained with Natural Language Processing techniques. I used area under the ROC curve to score my models and choose the best one: a Random Forest Classifier with no stopwords, no stemmer or lemmatizer, no limits on features (words), and no ngrams. 
+The question I wanted to answer with this project is: can we identify a lie given the words a politician uses? To try to answer this, I used IEEE's Fake News dataset to build and compare different models trained with Natural Language Processing techniques. I used area under the ROC curve to score my models and choose the best one: a Random Forest Classifier with no stopwords, no stemmer or lemmatizer, no limits on features (words), and no ngrams. 
 
 ## Exploring The Data
 
@@ -8,13 +8,13 @@ The data in IEEE's Fake News dataset consisted of over 17,000 rows of political 
 
 The dataset can be found [here](https://ieee-dataport.org/open-access/fnid-fake-news-inference-dataset).
 
-The bar charts below show the number of 'Real' and 'Fake' statements made every year (on the left) and by month (on the right). Since this data is 50% 'Real' and 50% 'Fake,' it may not be representative of the population of political statements, but this data does suggest the number of 'Real' statements have decreased in the last few years. The statements made by month do not show any big surprises. This chart suggests statements may decrease a little around the holidays (Novemeber and December) with an increase in October just before elections in early November.
+The bar charts below show the number of 'Real' and 'Fake' statements made every year (on the left) and by month (on the right). Since this data is 50% 'Real' and 50% 'Fake,' it may not be representative of the population of political statements, but this data does suggest the number of 'Real' statements have decreased in the last few years. The statements made by month do not show any big surprises. This chart suggests statements may decrease a little around the holidays (November and December) with an increase in October just before elections in early November.
 
 <p align="center">
 <img src="Images/year_month_label.png" width="800" height="275">
 <p/>
 
-The 17,000+ statements in this data have over 4,000 unique speakers. Howerver, the top 20 speakers make up nearly a third of the data. Below you can see a list of the top 20 speakers, the number of statements they have made, the number of 'Fake' statements they have made, the % of 'Fake' statements they have made, and the political party they are associated with if applicable. 
+The 17,000+ statements in this data have over 4,000 unique speakers. However, the top 20 speakers make up nearly a third of the data. Below you can see a list of the top 20 speakers, the number of statements they have made, the number of 'Fake' statements they have made, the % of 'Fake' statements they have made, and the political party they are associated with if applicable. 
 
 <p align="center">
 <img src="Images/top20_speakers.png" width="800" height="275">
@@ -32,9 +32,9 @@ Looking at these word clouds, it seems 'president' and 'Obama' are used more oft
 
 ## Modeling
 
-To prep for modeling, I split my data into a train (80%) and test (20%) set so that I would have some data to test my winning model on that it had not seen before. I decided to use the area under the ROC curve to score my models as I wanted to reward models with high true positve rates and low false positive rates. (If you are a news organization, you want to make sure you can identify fake news but you do not want to accuse a politician of being a liar if they are not.) I also decided to score my models using 5 Kfolds and average the resulting AUC ROC scores.
+To prep for modeling, I split my data into a train (80%) and test (20%) set so that I would have some data to test my winning model on that it had not seen before. I decided to use the area under the ROC curve to score my models as I wanted to reward models with high true positive rates and low false positive rates. (If you are a news organization, you want to make sure you can identify fake news but you do not want to accuse a politician of being a liar if they are not.) I also decided to score my models using 5 Kfolds and average the resulting AUC ROC scores.
 
-I chose to compare three types of models: Random Forest Classifiers, Graident Boosting Classifiers, and Gaussian Naive Bayes Classifiers. When deciding what features to use, I considered: stop words, no stopwords, Snowball stemmer, Word Net Lemmatizer, no stemmer or lemmatizer, a 5000 limit on number of features, no limit on number of features, n-grams up to 3, no n-grams. 
+I chose to compare three types of models: Random Forest Classifiers, Gradient Boosting Classifiers, and Gaussian Naive Bayes Classifiers. When deciding what features to use, I considered: stop words, no stopwords, Snowball stemmer, Word Net Lemmatizer, no stemmer or lemmatizer, a 5000 limit on number of features, no limit on number of features, n-grams up to 3, no n-grams. 
 
 The highest resulting AUC ROC scores for the three model types were:
 
