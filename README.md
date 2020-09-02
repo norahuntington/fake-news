@@ -72,7 +72,7 @@ Finally I tested my winning model using the test set data I had set aside earlie
 
 ## Code Files
 
-clean_data.py : functions that read in the data, clean it, and transform it
-modeling.py : functions to fit and score models and some sample code in main to use these functions
-plots.py : functions that create graphs to view data
-data-exploration.ipynb : example code to explore and graph data
+- clean_data.py : functions that read in the data, clean it, and transform it
+- modeling.py : functions to fit and score models and some sample code in main to use these functions
+- plots.py : functions that create graphs to view data
+- data-exploration.ipynb : example code to explore and graph data
